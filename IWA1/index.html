@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <style>
+            .main{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+        <img
+            id="profileImage"
+            height="100"
+            width="100"
+        >
+        <h2 id="fullName"></h2>
+        <p id="bioInfo"></p>
+        <h4 id="twitterHandle"></h4>
+        <h5 id="followersInfo"></h5>
+        <p>
+          Find me on <a id="githubLink">GitHub</a>
+        </p>
+        <a 
+          class="twitter-timeline" data-width="300" data-height="500" data-theme="dark" 
+          href="https://twitter.com/AaganMaskey?ref_src=twsrc%5Etfw">
+          Tweets by AaganMaskey
+        </a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+        </script>
+    </div>
+
+    <script>
+      fetch("https://api.github.com/users/aaganmaskey")
+        .then(response => response.json())
+        .then(function(data){
+          console.log(data)
+
+          let followersCount = data['followers']
+          let followersInfo = `I have been followed by ${followersCount} awesome people on GitHub`
+
+          document.getElementById('profileImage').src = data['avatar_url']
+          document.getElementById('fullName').textContent = data['name']
+          document.getElementById('bioInfo').textContent = data['bio']
+          document.getElementById('twitterHandle').textContent = data['twitter_username']
+          document.getElementById('followersInfo').textContent = followersInfo
+          document.getElementById('githubLink').href = data['html_url']
+        })
+    </script>
+    </body>
+</html>
