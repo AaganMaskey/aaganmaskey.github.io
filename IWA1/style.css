@@ -1,0 +1,41 @@
+.main {
+    text-align: center;
+    border: 10px dashed red;
+    outline: solid black;
+    vertical-align: middle;
+  }
+  
+.info{
+  padding: 25px;
+  background-color: rgb(108, 231, 7);
+}
+
+.repo{
+  background-position: 0%;
+  background-color: brown;
+}
+
+.twitter-timeline{
+  background-color: pink;
+}
+
+table, th, td {
+border: 1px solid black;
+outline: red;
+text-align: left;
+background-color:azure;
+padding: 25px;
+}
+
+#fullName{
+  text-transform:uppercase;
+  text-shadow: red;  
+  text-emphasis-color: blue;
+}
+
+#profileImage{
+  border-radius: 75%;
+}
+th{
+  text-align: center;
+}
